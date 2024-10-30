@@ -18,7 +18,9 @@ async function handelLogin(event) {
         }
 
         const data = await response.json();
-        console.log("Response from server:", data);
+        const token = data.token; //
+        localStorage.setItem("token", token);
+        console.log("Innlogging vellykket! Token lagret i localStorage.");
 
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
