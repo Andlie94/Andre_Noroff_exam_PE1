@@ -2,7 +2,7 @@ export async function allBlogPostfetch() {
     try {
       const response = await fetch("https://v2.api.noroff.dev/blog/posts/andre_lier");
       if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
+        throw new Error("Network response was not ok" + response.statusText);
       }
       const data = await response.json();
       console.log(data);
@@ -11,5 +11,4 @@ export async function allBlogPostfetch() {
       console.error("There was a problem with the fetch operation:", error);
     }
   }
-
 
