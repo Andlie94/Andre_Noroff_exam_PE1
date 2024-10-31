@@ -142,3 +142,9 @@ header img{
 .test{
     background-color: #87D5B9;
 }
+.popup-content{
+    display: none;
+}
+.logout{
+    display: none;
+}

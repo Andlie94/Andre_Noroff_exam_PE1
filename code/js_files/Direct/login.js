@@ -14,19 +14,42 @@ async function handelLogin(event) {
         });
 
         if (!response.ok) {
+            alert("inn loggning feilet Sjekk om epost og passord er riktig");
             throw new Error("inn loggning feilet");
         }
 
         const data = await response.json();
         const token = data.token;
-        const useremai = data.useremail;
+        const userEmail = data.useremail;
         localStorage.setItem("token", token);
-        localStorage.setItem("useremail", useremai);
+        localStorage.setItem("userEmail", userEmail);
         window.location.href = "edit.html"; 
 
     } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("Wrong password or email", error);
     }
 }
+
+
+function isLoggedIn() {
+    return localStorage.getItem("token") !== null; 
+}
+if (isLoggedIn()) {
+    console.log("Brukeren er innlogget.");
+} else {
+    console.log("Brukeren er ikke innlogget.");
+}
+function logout() {
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("userEmail");
+    updateUI(); 
+
+    const logoutButton = document.getElementById("logout-button");
+if (logoutButton) {
+    logoutButton.addEventListener("click", logout);
+}
+}
+
 const form = document.querySelector("form");
 form.addEventListener("submit", handelLogin);
