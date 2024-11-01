@@ -32,6 +32,7 @@
 
     <link rel="stylesheet" href="../CSS_files/style.css" />
     <script src="../js_files/direct/index.js" type="module" defer></script>
+    <script src="../js_files/direct/addloginlogoutbutton.js" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -42,7 +43,7 @@
       <a href="Index.html">HOME</a>
       <a href="Blogg.html">BLOGG</a>
       <a href="Contact.html">CONTACT</a>
-      <a href="Login.html">LOGIN</a>
+      <div id="loginlogout-container" class="loginlogout"></div>
     </header>
     <main>
       <section class="hero_image">
@@ -51,7 +52,7 @@
           src="../images/backgorund.png"
           alt="Hero image to Stifinneren"
         />
-        <a href="Blogg.html"><button>EXPLORE</button></a>
+        <a href="Blogg.html"><button class="commonButton">EXPLORE</button></a>
       </section>
       <section class="test">
         <h1>TRENDING</h1>
@@ -72,7 +73,7 @@
                     to get the news updtae first</p>
                   <label for="email"></label>
                   <input type="email" name="email" id="email" placeholder="Email" class="input-footer">
-                  <button>SUBMIT</button>
+                  <button class="commonButton">SUBMIT</button>
               </div>
               <div class="footer_middel_left">
                 <h3>CONTACT INFO</h3>

@@ -4,7 +4,7 @@ body {
     margin: 0;
     background-color: #00574C;
 }
-button{
+.commonButton{
     background-color: #87D5B9;
     text-align: center;
     color: #ffffff;
@@ -143,8 +143,5 @@ header img{
     background-color: #87D5B9;
 }
 .popup-content{
-    display: none;
-}
-.logout{
     display: none;
 }
