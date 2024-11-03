@@ -1,7 +1,8 @@
+const token = localStorage.getItem("token");
+
 import {allBlogPostfetch} from "../api_calls/api_fetch.js";
 async function displayBlogPosts() {
     try {
-        // Kall på API-funksjonen for å hente data
         const posts = await allBlogPostfetch();
         
         const blogContainer = document.getElementById("data-container");

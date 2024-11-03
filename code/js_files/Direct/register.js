@@ -1,24 +1,51 @@
-function registerUser() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+document.getElementById("register-form").addEventListener("submit", registerUser);
+async function registerUser(event) {  
+    event.preventDefault();  
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
+    const email = document.getElementById("email").value;
+    const email1 = document.getElementById("email1").value;
+    const password = document.getElementById("password").value;
+    const password1 = document.getElementById("password1").value;
+
+    //rules for email and password
+
+    const emailRules = /^[\w\-.]+@stud\.noroff\.no$/;
+    if (!emailRules.test(email)) {
+        alert("Please enter a valid email address.");
+
+    if (email === "" || password === "" || email1 === "" || password1 === "") {
+        alert("Please fill in all fields.");
         return;
     }
-
-    if (password.length < 5) {
-        alert('Password must be at least 8 characters long.');
+    if (email !== email1) {
+        alert("Email addresses do not match.");
         return;
     }
-
-    const passwordRegex = /^(?=.*[a-z])[A-Za-z\d]{5,}$/;
-    if (!passwordRegex.test(password)) {
-        alert('Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+    
+    if (password !== password1) {
+        alert("Passwords do not match.");
         return;
     }
+    try {
+        const response = await fetch("https://v2.api.noroff.dev/auth/register", {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        });
 
-    console.log('User registered:', { email, password });
+        if (!response.ok) {
+            throw new Error("Failed to register user");
+        }
+
+        const data = await response.json();
+        console.log(data);
+        alert("Registration successful! You can now log in.");
+    } 
+     catch (error) {
+        console.error('Error:', error); 
+        alert("An error occurred during registration. Please try again.");
+    }
+}
 }
