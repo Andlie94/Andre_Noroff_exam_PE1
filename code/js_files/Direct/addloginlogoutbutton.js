@@ -11,7 +11,7 @@ function logout() {
       logoutContainer.innerHTML = '';
       const button = document.createElement('button');
   
-      button.textContent = 'Logg ut';
+      button.textContent = 'LOGOUT';
   
       button.id = 'logout-button';
       button.className = 'loggut';
