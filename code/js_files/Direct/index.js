@@ -13,13 +13,17 @@ async function displayBlogPosts() {
             const postElement = document.createElement("div");
             postElement.classList.add("post");
 
-            const firstSentence = post.body.split(".")[0] + ".";
 
             postElement.innerHTML = `
                 <img src="${post.media.url}" alt="${post.media.alt}">
-                <h2>${post.title}</h2>
-                <p>${firstSentence}</p>
+                <h3>${post.title}</h3>
+                <p>${post.body.split('.')[0]}</p>
+                <p><small>Author: ${post.author.name}</small></p>
             `;
+
+            postElement.addEventListener('click', () => {
+                window.location.href = `blogpost.html?id=${post.id}`; 
+            });
 
             blogContainer.appendChild(postElement);
         });

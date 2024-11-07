@@ -3,17 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Stifinneren</title>
+    <title>Edit blogposts for Stifinneren</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Galindo&family=Gayathri:wght@100;400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tangerine:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="manifest" href="../favicon/site.webmanifest" />
-
     <link rel="stylesheet" href="../CSS_files/style.css" />
     <script src="../js_files/direct/edit.js" type="module" defer></script>
   </head>
@@ -22,9 +18,28 @@
         
     </header>
     <main>
-        <h1>Edit</h1>
-        fafafrafas
+        <section >
+        <h1>Write a new post</h1>
+        <div>
+    <form action="newPostForm" method="POST" class="newpost-form" id="newPostForm">
+            <label for="title"></label>
+            <input type="text" id="titleBlogg" name="title" placeholder="Enter title here" required>
 
+            <label for="content"></label>
+            <textarea id="bloggContent" name="content" placeholder="Write blog post here" required></textarea>
+
+            <label for="url"></label>
+            <input type="text" id="url_picture" name="URL" placeholder="Add url picture her ">
+            <button type="submit">POST</button>
+        </form>
+        </div>
+       </section>
+       <section>
+        <div>
+            <div id="blogginnlegg" class="blogginnlegg">
+            </div>
+        </div>
+       </section>
     </main>
     <footer>
 
