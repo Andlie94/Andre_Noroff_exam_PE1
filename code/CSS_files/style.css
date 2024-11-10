@@ -231,3 +231,27 @@ header img{
     overflow: hidden;          
  }
   /*styling for blog posts edit*/
+  .Ostlandet{
+    background-color: #037E6E;
+  }
+  .Fjellregel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .Fjellregel h2{
+    color: #00BDA5;
+    font-size: 8rem;
+    font-weight:900;
+    margin-left: 5%;
+  }
+  .stifinneremaskott {
+    transform: scaleX(-1);
+    margin-top: 190px;
+}
+.stifinneremaskott img{   
+    width: 70%;
+    height: auto;
+    cursor: pointer;
+}
