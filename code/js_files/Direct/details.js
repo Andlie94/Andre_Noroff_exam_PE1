@@ -37,9 +37,9 @@ async function displayBlogPost() {
         postElement.classList.add("artikel");
         postElement.innerHTML = `
             <img src="${artikel.data.media.url}" alt="${artikel.data.media.alt}">
-            <h3>${artikel.data.title}</h3>
-            <p><small>Publisert: ${artikel.data.updated.split("T")[0]}</small></p>
-            <p><small>Forfatter: ${artikel.data.author.name}</small></p>
+            <h1>${artikel.data.title}</h1>
+            <time><small>Publisert: ${artikel.data.updated.split("T")[0]}</small></time>
+            <span><small>Forfatter: ${artikel.data.author.name}</span></p>
             <p>${artikel.data.body}</p>
         `;
 

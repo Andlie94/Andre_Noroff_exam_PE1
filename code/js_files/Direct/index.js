@@ -76,7 +76,7 @@ ostlandetContainer.innerHTML = "";
     posts.data.forEach((post) => {
         const postElement = document.createElement("div");
         postElement.classList.add("post");
-  
+
         postElement.innerHTML = `
           <img src="${post.media.url}" alt="${post.media.alt}">
           <h3>${post.title}</h3>
@@ -111,10 +111,16 @@ if (filter) {
   });
 }
 
-function popuptext() {
-    document.getElementById("stifinnetenmaskottext");
-    display = "block";
-  }  
+const stifinnerenHead = document.getElementById("fjellregel_image");
+const stifinnerentext = document.getElementById("fjellregel_regel");
+
+stifinnerenHead.addEventListener("click", function() {
+    if (stifinnerentext.style.display === "none" || stifinnerentext.style.display === "") {
+        stifinnerentext.style.display = "block";
+    } else {
+        stifinnerentext.style.display = "none";
+    }
+});
 
 displayOstlandetBlogPosts();
 displayBlogPosts();

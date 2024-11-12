@@ -159,22 +159,17 @@ header img{
     color: #ffffff;
     font-size: 1rem;
 }
-.test{
-    background-color: #87D5B9;
-}
-.popup-content{
-    display: none;
-}
 .crucell h1{
     color: #FBE4B9;
     font-size: 8rem;
     margin-bottom: 20px;
     font-family: Tangerine;
+    text-align: center;
 }
 
 .data-container{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
     gap: 50px;
     padding: 20px;
     justify-content: center;
@@ -192,16 +187,21 @@ header img{
     color: #FBE4B9;
 }
  /* Styling for blog posts index*/
+.post p{
+    font-size: 1rem;
+}
 .post {
     border-radius: 8px;
     padding: 10px;
     background-color: #FBE4B9;
     max-width: calc(33.33% - 50px);
-    felx:1;
+
     max-width: 300px;
     margin: 0 auto;
     color: #00574C;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+    cursor: pointer;
 }
 .post img {
     width: 100%;              
@@ -209,6 +209,11 @@ header img{
     object-fit: cover;         
     border-radius: 8px;        
     overflow: hidden;          
+}
+.post:hover{
+    background-color:#00574C;
+    color:#FBE4B9
+    
 }
  /* Styling for blog posts index */
  /*styling for blog posts edit*/
@@ -234,24 +239,107 @@ header img{
   .Ostlandet{
     background-color: #037E6E;
   }
-  .Fjellregel{
+  .Ostlandet h2{
+    color: #FBE4B9;
+    font-size: 8vw;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Tangerine;
+    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    padding-top: 10px;
+  }
+.fjellregel{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .Fjellregel h2{
-    color: #00BDA5;
-    font-size: 8rem;
-    font-weight:900;
-    margin-left: 5%;
-  }
-  .stifinneremaskott {
-    transform: scaleX(-1);
-    margin-top: 190px;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    color: #ffffff;
 }
-.stifinneremaskott img{   
-    width: 70%;
-    height: auto;
+
+.fjellregel_text h2{
+    color: #00BDA5;
+    font-size: 8vw;
+    font-weight: 900;
+}
+.fjellregel_regel p {
+    position: relative; /* For å kunne posisjonere spissen av boblen */
+    color: #00574C;
+    font-weight: 400;
+    font-size: 1.3vw;
+    margin-bottom: 10px;
+    background-color: #FBE4B9;
+    padding: 1%;
+    margin-top: 40%;
+    border-radius: 15px; /* Runder hjørnene */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: none;
+}
+.fjellregel_image{
+    transform: scaleX(-1);
     cursor: pointer;
+    margin-top:12%;
+}
+.fjellregel_image img{
+    width: 15vw;
+    height: auto;
+    object-fit: cover;
+}
+.fjellregel_regel p:after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Plasser spissen vertikalt på midten */
+    right: -10px; /* Plasser spissen utenfor høyre kant */
+    transform: translateY(-50%); /* Sentrer spissen vertikalt */
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #FBE4B9; /* Farge på boblespissen */
+}
+.blogginnlegg {
+    margin-top: 50px;
+    margin: 50px 200px 0;
+    color: #ffffff;
+    text-align: center;
+    background-color: #037E6E;
+    border-radius: 10%;
+}
+.artikel img{
+    width: 100%;              
+    height: 400px;            
+    object-fit: cover;         
+    border-radius: 8px;        
+    overflow: hidden;
+}
+.artikel h1{
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.artikel span{
+
+    margin-bottom: 10px;
+}
+.artikel time{
+}
+.artikel p{
+    font-size: 1.2vw;
+    text-align: left;
+}
+
+
+@media (max-width: 1000px) {
+    .data-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .post p{
+        font-size: 1.6vw;
+     }
+}
+@media (max-width: 600px) {
+    .data-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .post p{
+        font-size: 3vw;
+     }
 }

@@ -1,6 +1,11 @@
 const token = localStorage.getItem("token");
+const email = localStorage.getItem("userEmail");
+
 if (!token) {
   window.location.href = "login.html";
+}
+if (email !== "andlie02174@stud.noroff.no") {
+  window.location.href = "index.html";
 }
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -28,13 +33,13 @@ async function fetchPostData() {
     document.getElementById("urlPictureUrlEdit").value = post.data.media.url;
     document.getElementById("urlPictureAltEdit").value = post.data.media.alt;
   } catch (error) {
-    console.error('Error fetching post data:', error);
+    console.error("Error fetching post data:", error);
   }
 }
 
 document
-  .getElementById('editPost')
-  .addEventListener('submit', async (event) => {
+  .getElementById("editPost")
+  .addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const title = document.getElementById("titleBloggEdit").value;
@@ -55,11 +60,11 @@ document
       const response = await fetch(
         `https://v2.api.noroff.dev/blog/posts/andre_lier/${postId}`,
         {
-          method: 'PUT',
+          method: "PUT",
           headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5kcmVfbGllciIsImVtYWlsIjoiYW5kbGllMDIxNzRAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3MzEwMDQyNjd9.VTkDBUpQPgFpauw6Qvp-KFiFUplT3Q71tFm9nHn2Ce0`,
-            'X-Noroff-API-Key': '0ce68424-2b01-48d9-871d-b9e4c13166d2',
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+            "X-Noroff-API-Key": "0ce68424-2b01-48d9-871d-b9e4c13166d2",
           },
           body: JSON.stringify(updatedContent),
         }
@@ -69,10 +74,10 @@ document
         throw Error("Failed to update blog post");
       }
       alert("Posten ble oppdatert");
-      window.location.href="edit.html";
+      window.location.href = "edit.html";
     } catch (error) {
       console.error("Failed to update blog post:", error);
-      alert('An error occurred while updating the post: ' + error.message);
+      alert("An error occurred while updating the post: " + error.message);
     }
   });
 
