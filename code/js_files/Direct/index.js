@@ -122,5 +122,19 @@ stifinnerenHead.addEventListener("click", function() {
     }
 });
 
+imageCarousel();
+const imageContainer = document.getElementById("image-crucell");
+const images = imageContainer.getElementsByTagName("img");
+let currentIndex = 0;
+
+function imageCarousel() {
+    setInterval(() => {
+        images[currentIndex].style.display = "none";
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].style.display = "block";
+    }, 3000);
+}
+
+
 displayOstlandetBlogPosts();
 displayBlogPosts();

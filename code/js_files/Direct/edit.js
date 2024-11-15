@@ -14,19 +14,16 @@ async function displayBlogPosts() {
   try {
     const posts = await allBlogPostfetch();
 
-    const bloggPost = document.getElementById("blogg_inlegg");
-    blogginnlegg.innerHTML = "";
-
-    posts.data.forEach((data) => {
+    posts.data.forEach((edit) => {
       const postElement = document.createElement("div");
-      postElement.classList.add("data");
+      postElement.classList.add("edit");
 
       postElement.innerHTML = `
-                <img src="${data.media.url}" alt="${data.media.alt}">
-                <h3>${data.title}</h3>
-                <p><small>Author: ${data.author.name}</small></p>
-                <button class="delete-button" data-id="${data.id}">DELETE</button>
-                <button class="edit-buttton" data-id="${data.id}">EDIT</button>
+                <img src="${edit.media.url}" alt="${edit.media.alt}">
+                <h3>${edit.title}</h3>
+                <p><small>Author: ${edit.author.name}</small></p>
+                <button class="delete-button" data-id="${edit.id}">DELETE</button>
+                <button class="edit-buttton" data-id="${edit.id}">EDIT</button>
             `;
 
       document.querySelectorAll(".delete-button").forEach((button) => {

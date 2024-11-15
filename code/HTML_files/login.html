@@ -15,17 +15,35 @@
     <link rel="stylesheet" href="../CSS_files/style.css" />
     <script src="../js_files/Direct/login.js"type="module" defer></script>
   </head>
-<body>
-    
-    <form action="/submit-form" method="POST class="login-form">
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" required>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
-    </form>
-    <button id="logout-button">Logout</button>
+  <body class="loginbody">
+  <header class="loginheader">
 
+  </header>
+  <main class="login">
+    <div class="loginpage">
+      <div class="text-section">
+        <h1>UT <br> AV HI <br> INN PÅ STI</h1>
+      </div>
+      <div class="loginform">
+        <h2>LOGIN</h2>
+        <form action="/submit-form" method="POST" class="login-form">
+          <label for="email"></label>
+          <input type="text" id="email" placeholder="Email" required>
+          
+          <label for="password"></label>
+          <input type="password" id="password" placeholder="Password" required>
+          <p> Forgot Password</p>
+          
+          <button type="submit">Login</button>
+          <p>Don't have an account? <a href="register.html">register here</a></p>
+          <button id="logout-button">Logout</button>
+        </form>
+      </div>
+    </div>
+    <div class="background-image">
+      <img src="../images/Loginpage_picture.png" alt="">
+    </div>
+  </main>
     <footer>
         <div class="footer_container">
             <div class="footer_box">

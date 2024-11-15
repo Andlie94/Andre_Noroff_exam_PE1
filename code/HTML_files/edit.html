@@ -13,30 +13,32 @@
     <link rel="stylesheet" href="../CSS_files/style.css" />
     <script src="../js_files/direct/edit.js" type="module" defer></script>
   </head>
-  <body>
+  <body class="editpage">
     <header>
         
     </header>
     <main>
         <section >
-        <h1>Write a new post</h1>
-        <div>
-    <form action="newPostform" method="POST" class="newpost-form" id="newPostForm">
-            <label for="title"></label>
-            <input type="text" id="titleBlogg" name="title" placeholder="Enter title here" required>
-
-            <label for="content"></label>
-            <textarea id="bloggContent" name="content" placeholder="Write blog post here" required></textarea>
-
-            <label for="url"></label>
-            <input type="text" id="url_picture" name="URL" placeholder="Add url picture her ">
-            <button type="submit">POST</button>
-        </form>
+        <div class="newPost">
+          <h1>WRITE A NEW POST</h1>
+          <form action="newPostform" method="POST" class="newpost-form" id="newPostForm">
+              <label for="title"></label>
+              <input class="title" type="text" id="titleBlogg" name="title" placeholder="Enter title here" required>
+      
+              <label for="content"></label>
+              <textarea id="bloggContent" name="content" placeholder="Write blog post here" required></textarea>
+      
+              <label for="url"></label>
+              <div class="url-and-button">
+                  <input type="text" id="url_picture" name="URL" placeholder="Add url picture her">
+                  <button type="submit">POST</button>
+              </div>
+          </form>
         </div>
        </section>
        <section>
         <div>
-            <div id="blogginnlegg" class="blogginnlegg">
+            <div id="blogginnlegg" class="edit-page">
             </div>
         </div>
        </section>

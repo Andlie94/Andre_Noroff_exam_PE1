@@ -1,3 +1,9 @@
+const token = localStorage.getItem("token");
+
+import {
+  allBlogPostfetch,
+} from "../api_calls/api_fetch.js";
+
 async function displayBlogPost() {
 
     const queryString = window.location.search;
@@ -50,5 +56,37 @@ async function displayBlogPost() {
         blogContainer.innerHTML = "Noe gikk galt, prøv på nytt senere.";
     }
 }
+async function displayOstlandetBlogPosts() {
+  try {
+    const posts = await allBlogPostfetch();
 
+    const ostlandetContainer = document.getElementById("otherBlogg");
+    ostlandetContainer.innerHTML = "";
+
+    const postsToDisplay = posts.data.slice(0, 3);
+
+    postsToDisplay.forEach((post) => {
+      const postElement = document.createElement("div");
+      postElement.classList.add("post");
+
+      postElement.innerHTML = `
+                <img src="${post.media.url}" alt="${post.media.alt}">
+                <h3>${post.title}</h3>
+                <p><small>Author: ${post.author.name}</small></p>
+            `;
+      postElement.addEventListener("click", () => {
+        window.location.href = `blogpost.html?id=${post.id}`;
+      });
+
+      ostlandetContainer.appendChild(postElement);
+    });
+  } catch (error) {
+    console.error(
+      "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
+      error
+    );
+  }
+}
+
+displayOstlandetBlogPosts();
 displayBlogPost();
