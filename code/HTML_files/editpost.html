@@ -28,45 +28,61 @@
       type="module"
       defer
     ></script>
+    <script src="../js_files/direct/addloginlogoutbutton.js" type="module" defer></script>
   </head>
   <body>
-    <header></header>
+    <header class="index">
+      <img
+        src="../images/Stifinneren_logo_green.png"
+        alt="Logo to Stifinneren"
+      />
+      <a href="Index.html">HOME</a>
+      <a href="Blogg.html">BLOGG</a>
+      <a href="Contact.html">CONTACT</a>
+      <div id="loginlogout-container" class="loginlogout"></div>
+    </header>
     <main>
-      <form action="editPost" method="POST" class="editPost" id="editPost">
+      <div>
+        <h1>Edit Blog Post</h1>
+      <form 
+      action="editPost" method="POST" class="editPost" id="editPost">
         <label for="title">Title</label>
         <input
-          type="text"
-          id="titleBloggEdit"
-          name="title"
-          placeholder="Enter title here"
-          required
+            type="text"
+            id="titleBloggEdit"
+            name="title"
+            placeholder="Enter title here"
+            required
         />
-
+    
         <label for="content">Content</label>
         <textarea
-          id="editBloggContent"
-          name="content"
-          placeholder="Write blog post here"
-          required
+            id="editBloggContent"
+            name="content"
+            placeholder="Write blog post here"
+            required
         ></textarea>
-
+    
         <label for="url">Url</label>
         <input
-          type="text"
-          id="urlPictureUrlEdit"
-          name="URL"
-          placeholder="Add url picture here"
+            type="text"
+            id="urlPictureUrlEdit"
+            name="URL"
+            placeholder="Add url picture here"
         />
-
-        <label for="url">Url alt text</label>
-        <input
-          type="text"
-          id="urlPictureAltEdit"
-          name="alt"
-          placeholder="Add alt picture here"
-        />
-        <button type="submit">UPDATE</button>
-      </form>
+    
+        <div class="url-alt-container">
+            <label for="urlAlt"></label>
+            <input
+                type="text"
+                id="urlPictureAltEdit"
+                name="alt"
+                placeholder="Add alt picture here"
+            />
+            <button type="submit">UPDATE</button>
+        </div>
+      </div>
+    </form>
     </main>
     <footer></footer>
   </body>

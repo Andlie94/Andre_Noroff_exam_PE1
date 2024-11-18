@@ -12,13 +12,23 @@
     />
     <link rel="stylesheet" href="../CSS_files/style.css" />
     <script src="../js_files/direct/edit.js" type="module" defer></script>
+    <script src="../js_files/direct/addloginlogoutbutton.js" type="module" defer></script>
   </head>
   <body class="editpage">
     <header>
-        
+      <img
+        src="../images/Stifinneren_logo_green.png"
+        alt="Logo to Stifinneren"
+      />
+      <input type="checkbox" id="menu-chekbox">
+      <label for="menu-chekbox" class="hamburger_menu"><i class="fa-solid fa-bars"></i></label>
+      <a href="Index.html">HOME</a>
+      <a href="Blogg.html">BLOGG</a>
+      <a href="Contact.html">CONTACT</a>
+      <div id="loginlogout-container" class="loginlogout"></div>
     </header>
     <main>
-        <section >
+        <section>
         <div class="newPost">
           <h1>WRITE A NEW POST</h1>
           <form action="newPostform" method="POST" class="newpost-form" id="newPostForm">
@@ -42,11 +52,6 @@
             </div>
         </div>
        </section>
-    </main>
-    <footer>
-
-    </footer>
-    </main>
     <footer>
         <div class="footer_container">
             <div class="footer_box">

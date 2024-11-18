@@ -19,11 +19,17 @@ async function displayBlogPosts() {
       postElement.classList.add("edit");
 
       postElement.innerHTML = `
+          <div class="edit-div">
                 <img src="${edit.media.url}" alt="${edit.media.alt}">
+            <div class="edit-info-div">
                 <h3>${edit.title}</h3>
                 <p><small>Author: ${edit.author.name}</small></p>
+               <div class="edit-body">    
                 <button class="delete-button" data-id="${edit.id}">DELETE</button>
                 <button class="edit-buttton" data-id="${edit.id}">EDIT</button>
+              </div>
+            </div>
+          </div>  
             `;
 
       document.querySelectorAll(".delete-button").forEach((button) => {
