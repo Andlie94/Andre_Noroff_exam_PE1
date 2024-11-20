@@ -6,7 +6,6 @@ async function registerUser(event) {
     const password = document.getElementById('password').value;
     const password1 = document.getElementById('password1').value;
   
-    //rules for email and password
     const emailRules = /^[\w\-.]+@stud\.noroff\.no$/;
     if (!emailRules.test(email)) {
       alert('Please enter a valid email address.');
