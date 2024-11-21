@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Stifinneren</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galindo&family=Gayathri:wght@100;400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon/favicon_io-2/apple-touch-icon.png"
+    />
+    <link rel="stylesheet" href="../CSS_files/style.css" />
+    <script src="../js_files/direct/eidtBloggPost.js" type="module"defer> </script>
+    <script src="../js_files/direct/addloginlogoutbutton.js" type="module" defer></script>
+  </head>
+  <body class="edit-post">
+    <header>
+      <div class="header_contianer">
+        <input type="checkbox" id="menu-chekbox">
+        <label for="menu-chekbox" class="hamburger_menu"><i class="fa-solid fa-bars"></i></label>
+        <a href="index.html"><img src="../images/Stifinneren_logo_white.png" class="logo_stfinneren" alt="logo of Stifinneren"></a>
+          <nav>
+            <a href="index.html">HOME</a>
+            <a href="blogg.html">BLOGG</a>
+            <a href="contact.html">CONTACT</a>
+            <div id="loginlogout-container" class="loginlogout"></div>
+          </nav> 
+        </div>
+    </header>
+    <main>
+      <div>
+      <form 
+      action="editPost" method="POST" class="editPost" id="editPost">
+        <label for="title">Title</label>
+        <input
+            type="text"
+            id="titleBloggEdit"
+            name="title"
+            placeholder="Enter title here"
+            required
+        />
+    
+        <label for="content">Content</label>
+        <textarea
+            id="editBloggContent"
+            name="content"
+            placeholder="Write blog post here"
+            required
+        ></textarea>
+    
+        <label for="url">Url</label>
+        <input
+            type="text"
+            id="urlPictureUrlEdit"
+            name="URL"
+            placeholder="Add url picture here"
+        />
+    
+        <div class="url-alt-container">
+            <label for="urlAlt"></label>
+            <input
+                type="text"
+                id="urlPictureAltEdit"
+                name="alt"
+                placeholder="Add alt picture here"
+            />
+            <button type="submit">UPDATE</button>
+        </div>
+      </div>
+    </form>
+    </main>
+    <footer>
+      <div class="footer_container">
+          <div class="footer_box">
+            <div class="footer_left">
+              <h3>NEWS LETTER</h3>
+                <p>Subscribe to our newsletter <br>
+                  to get the news updtae first</p>
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Email" class="input-footer">
+                <button>SUBMIT</button>
+            </div>
+            <div class="footer_middel_left">
+              <h3>CONTACT INFO</h3>
+              <p>Besøksadresse </p>
+              <p>Stifinneren </p>
+              <p>Hegdehaugsveien 29</p>
+              <p>0352 Oslo</p>
+                  Email: email@email.com </p>
+                  <a href="Login.html">Contact us</a>
+              </div>
+            <div class="footer_middel_right">
+              <h3>LEGAL NOTICE</h3>
+              <p>Cookies Policy <br>
+                  Terms & conditions <br> 
+                  Privacy Policy</p>
+            </div>
+            <div class="footer_right">
+              <h3>BUSINESS HOURS</h3>
+              <p>Monday-Friday: 10:00 - 18:00 <br>
+                 Saturday-Sunday: Closed</p>
+            </div>
+            <div class="footer_phone">
+              <h3>NEWS LETTER</h3>
+                <p>Subscribe to our newsletter <br>
+                  to get the news updtae first</p>
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Email" class="input-footer">
+                <button class="commonButton">SUBMIT</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer_icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-square-x-twitter"></i>
+          <i class="fa-brands fa-square-instagram"></i>
+          <i class="fa-brands fa-snapchat"></i>
+        </div>
+        <div class="footer_copyright">© 2022 STIFINNEREN</div>
+  </footer>
+  </body>
+</html>
