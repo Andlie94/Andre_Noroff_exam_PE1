@@ -9,7 +9,7 @@ function showAndHideEditPage() {
   const edit = document.getElementById("editPage");
 
   if (localStorage.getItem("token") !== null) {
-    edit.style.display = "block"; 
+    edit.style.display = "block";
   } else {
     edit.style.display = "none";
   }
@@ -24,7 +24,7 @@ function addLoginLogoutButton() {
     button.textContent = "LOGOUT";
 
     button.id = "logout-button";
-    button.className = "loggut";
+    button.className = "logg_button";
 
     button.addEventListener("click", logout);
 
@@ -37,16 +37,16 @@ function addLoginLogoutButton() {
     loginButton.textContent = "LOGIN";
 
     loginButton.id = "login-button";
-    loginButton.className = "logginn";
+    loginButton.className = "logg_button";
     loginButton.href =
-      window.location.pathname === '/index.html' ||
-      window.location.pathname === '/index' ||
-      window.location.pathname === '/' ||
-      window.location.pathname === '/Andre_Exam_PE1/' ||
-      window.location.pathname === '/Andre_Exam_PE1/index.html' ||
-      window.location.pathname === '/Andre_Exam_PE1/index'
-        ? 'HTML_files/login.html'
-        : 'login.html';
+      window.location.pathname === "/index.html" ||
+      window.location.pathname === "/index" ||
+      window.location.pathname === "/" ||
+      window.location.pathname === "/Andre_Exam_PE1/" ||
+      window.location.pathname === "/Andre_Exam_PE1/index.html" ||
+      window.location.pathname === "/Andre_Exam_PE1/index"
+        ? "HTML_files/login.html"
+        : "login.html";
 
     blogContainer.appendChild(loginButton);
   }
