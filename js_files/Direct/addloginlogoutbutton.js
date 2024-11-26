@@ -39,14 +39,14 @@ function addLoginLogoutButton() {
     loginButton.id = "login-button";
     loginButton.className = "logg_button";
     loginButton.href =
-      window.location.pathname === "/index.html" ||
-      window.location.pathname === "/index" ||
-      window.location.pathname === "/" ||
-      window.location.pathname === "/Andre_Exam_PE1/" ||
-      window.location.pathname === "/Andre_Exam_PE1/index.html" ||
-      window.location.pathname === "/Andre_Exam_PE1/index"
-        ? "HTML_files/login.html"
-        : "login.html";
+      window.location.pathname === '/index.html' ||
+      window.location.pathname === '/index' ||
+      window.location.pathname === '/' ||
+      window.location.pathname === '/Andre_Noroff_exam_PE1/' ||
+      window.location.pathname === '/Andre_Noroff_exam_PE1/index.html' ||
+      window.location.pathname === '/Andre_Noroff_exam_PE1/index'
+        ? 'HTML_files/login.html'
+        : 'login.html';
 
     blogContainer.appendChild(loginButton);
   }

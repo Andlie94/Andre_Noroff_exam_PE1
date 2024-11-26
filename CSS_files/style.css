@@ -78,9 +78,7 @@ header {
   font-size: 2vw;
   font-family: "Inter", sans-serif;
 }
-.loggout:hover {
-  color: #ffffff;
-}
+
 .hero_image img {
   top: 0;
   left: 0;
@@ -824,7 +822,7 @@ footer {
     margin-top: 0%;
     margin-left: 0%;
   }
-  .loggut {
+  .logg_button {
     padding: 2px;
     position:sticky;
     margin-top: 0px;

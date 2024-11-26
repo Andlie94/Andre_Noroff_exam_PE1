@@ -42,7 +42,7 @@ async function displayCarucel() {
       postsToDisplay.forEach((post, index) => {
         const slide = slides[index];
         slide.addEventListener("click", () => {
-          window.location.href = `../HTML_files/blogpost.html?id=${post.id}`;
+          window.location.href = `HTML_files/blogpost.html?id=${post.id}`;
         });
       });
       showSlides(slideIndex);
