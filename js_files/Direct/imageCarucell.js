@@ -1,31 +1,51 @@
-import {
-    allBlogPostfetch,
-  } from "../api_calls/api_fetch.js";
+import { allBlogPostfetch } from "../api_calls/api_fetch.js";
 
-  async function displayBlogPosts() {
+let slideIndex = 1;
+
+
+const plusSlides = (currentSlideIndex) => {
+  showSlides(slideIndex += currentSlideIndex);
+};
+
+const currentSlide = (currentSlideIndex) => {
+  showSlides(slideIndex = currentSlideIndex);
+};
+
+async function displayCarucel() {
     try {
       const posts = await allBlogPostfetch();
+      const postsToDisplay = posts.data.slice(0, 3);
   
-      const blogContainer = document.getElementById("data-container");
-      blogContainer.innerHTML = "";
-  
-      posts.data.forEach((post) => {
-        const postElement = document.createElement("div");
-        postElement.classList.add("post");
-  
-        postElement.innerHTML = `
-                  <img src="${post.media.url}" alt="${post.media.alt}">
-                  <h3>${post.title}</h3>
-                  <p>${post.body.split(".")[0]}</p>
-                  <p><small>Author: ${post.author.name}</small></p>
-              `;
-  
-        postElement.addEventListener("click", () => {
-          window.location.href = `blogpost.html?id=${post.id}`;
+      const blogContainer = document.getElementById("image-crucell");
+      blogContainer.innerHTML = `
+        <div class="slideshow-container">
+          ${postsToDisplay.map(
+            (carucel) =>
+              `<div class="mySlides fade post">
+                <img src="${carucel.media.url}" alt="${carucel.media.alt}">
+                <h3>${carucel.title}</h3>
+              </div>`
+          ).join('')}    
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br />
+        
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      `;
+
+      const slides = document.querySelectorAll(".mySlides");
+      postsToDisplay.forEach((post, index) => {
+        const slide = slides[index];
+        slide.addEventListener("click", () => {
+          window.location.href = `../HTML_files/blogpost.html?id=${post.id}`;
         });
-  
-        blogContainer.appendChild(postElement);
       });
+      showSlides(slideIndex);
     } catch (error) {
       console.error(
         "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
@@ -34,7 +54,29 @@ import {
     }
   }
 
-  const imageCarucell = document.getElementById("imageCarucell");
+function showSlides(currentSlideIndex) {
+  let i;
+  const slides = document.getElementsByClassName('mySlides');
+  const dots = document.getElementsByClassName('dot');
   
-  const rightButton = document.getElementById("rightButton");
-  const leftButton = document.getElementById("leftButton");
+
+  if (currentSlideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  if (currentSlideIndex < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+window.plusSlides = plusSlides;
+window.currentSlide = currentSlide;
+
+displayCarucel();

@@ -8,7 +8,7 @@ async function registerUser(event) {
   
     const emailRules = /^[\w\-.]+@stud\.noroff\.no$/;
     if (!emailRules.test(email)) {
-      alert('Please enter a valid email address.');
+      alert('You need to enter a Noroff email address');
       return;
     }
   
@@ -25,6 +25,11 @@ async function registerUser(event) {
       alert('Passwords do not match.');
       return;
     }
+
+    if (password.length < 8 || password1.length < 8){
+      alert('Password must be at least 8 characters long.');
+      return;
+    }
   
     try {
       const response = await fetch('https://v2.api.noroff.dev/auth/register', {
@@ -38,10 +43,11 @@ async function registerUser(event) {
       if (!response.ok) {
         throw new Error('Failed to register user');
       }
+      console.log(response);
   
       const data = await response.json();
-      console.log(data);
       alert('Registration successful! You can now log in.');
+      location.reload();
     } catch (error) {
       console.error('Error:', error);
       alert('An error occurred during registration. Please try again.');

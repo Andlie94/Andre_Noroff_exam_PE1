@@ -12,9 +12,9 @@ async function displayOstlandetBlogPosts() {
     const ostlandetContainer = document.getElementById("Ostlandet-container");
     ostlandetContainer.innerHTML = "";
 
-    const postsToDisplay = posts.data.slice(0, 3);
+    const postsToDisplayost = posts.data.slice(0, 3);
 
-    postsToDisplay.forEach((post) => {
+    postsToDisplayost.forEach((post) => {
       const postElement = document.createElement("div");
       postElement.classList.add("post");
 
@@ -26,7 +26,7 @@ async function displayOstlandetBlogPosts() {
             `;
 
       postElement.addEventListener("click", () => {
-        window.location.href = `blogpost.html?id=${post.id}`;
+        window.location.href = `HTML_files/blogpost.html?id=${post.id}`;
       });
 
       ostlandetContainer.appendChild(postElement);
@@ -46,7 +46,8 @@ async function displayBlogPosts() {
     const blogContainer = document.getElementById("data-container");
     blogContainer.innerHTML = "";
 
-    posts.data.forEach((post) => {
+    const postsToDisplay = posts.data.slice(0, 12);
+    postsToDisplay.forEach((post) => {
       const postElement = document.createElement("div");
       postElement.classList.add("post");
 
@@ -58,7 +59,7 @@ async function displayBlogPosts() {
             `;
 
       postElement.addEventListener("click", () => {
-        window.location.href = `blogpost.html?id=${post.id}`;
+        window.location.href = `HTML_files/blogpost.html?id=${post.id}`;
       });
 
       blogContainer.appendChild(postElement);
@@ -70,7 +71,7 @@ async function displayBlogPosts() {
 
 async function displayByFilters(selectregion) {
   try {
-    const posts = await filterbloggpostFetch(selectregion);
+    const posts = await filterbloggpostFetch(selectregion);2
 const ostlandetContainer = document.getElementById("data-container");
 ostlandetContainer.innerHTML = "";
     posts.data.forEach((post) => {
@@ -121,20 +122,6 @@ stifinnerenHead.addEventListener("click", function() {
         stifinnerentext.style.display = "none";
     }
 });
-
-imageCarousel();
-const imageContainer = document.getElementById("image-crucell");
-const images = imageContainer.getElementsByTagName("img");
-let currentIndex = 0;
-
-function imageCarousel() {
-    setInterval(() => {
-        images[currentIndex].style.display = "none";
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].style.display = "block";
-    }, 3000);
-}
-
 
 displayOstlandetBlogPosts();
 displayBlogPosts();

@@ -121,7 +121,7 @@ footer {
   flex-basis: 25%;
   display: flex;
   flex-direction: column;
-  margin-left: 8%;
+  margin-left: 10%;
 }
 .footer_left button {
   font-size: 0.8rem;
@@ -182,7 +182,8 @@ footer {
 }
 .crucell h1 {
   color: #fbe4b9;
-  font-size: 8rem;
+  font-size: 8vw;
+  margin-top: -5%;
   margin-bottom: 20px;
   font-family: Tangerine;
   text-align: center;
@@ -367,10 +368,9 @@ footer {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-
-/* loginpage */
 .loginbody {
-  background: linear-gradient(to bottom, #a1ebd5, #c5f1e4);
+  background: linear-gradient(to bottom, #a1ebd5, #c5f1e4); 
+  overflow-x: hidden;
 }
 .loginpage {
   display: flex;
@@ -417,6 +417,7 @@ footer {
   position: relative;
   margin-top: -200px;
   z-index: -1;
+  overflow-x: hidden;
 }
 .loginform button {
   padding: 10px 20px;
@@ -850,9 +851,102 @@ footer {
     nav a {
       display: inline;
     }
+
 } 
   @media (max-width: 850px){
     .otherBlogg{
   display: none;
     }
+  }
+
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #00574C;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: #FBE4B9;
+  }
+
+.prev{
+    border-radius: 100%;
+}
+  .next {
+    right: 0;
+    border-radius: 100%;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color:#eed19bf6;
+    border-radius: 100%;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #620a0a;
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px;
+    }
+  }
+
+  .mySlides{
+    border-radius: 0px;
+    padding: 0px; 
+    background-color: #00574c;
+    max-width: 1000px;
+    min-height: 400px; ;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .mySlides img {
+    width: 100%; 
+    min-height: 400px; 
+    border-radius: 0px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .mySlides h3 {
+    position: absolute; /* Position the title over the image */
+    bottom: 20px; /* Add space from the bottom of the image */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center title exactly */
+    color: white; /* Title color */
+    font-weight: bold; /* Make title bold */
+    padding: 10px 20px; /* Add padding for better spacing around text */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    border-radius: 5px; /* Optional rounded corners */
   }

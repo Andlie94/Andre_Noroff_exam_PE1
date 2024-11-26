@@ -5,7 +5,7 @@ if (!token) {
   window.location.href = "login.html";
 }
 if (email !== "andlie02174@stud.noroff.no") {
-  window.location.href = "index.html";
+  window.location.href = "HTML_files/index.html";
 }
 
 const urlParams = new URLSearchParams(window.location.search);
