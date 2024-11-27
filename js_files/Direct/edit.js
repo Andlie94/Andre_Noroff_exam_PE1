@@ -5,7 +5,7 @@ if (!token) {
   window.location.href = "login.html";
 }
 if (email !== "andlie02174@stud.noroff.no") {
-  window.location.href = "../";
+  window.location.href = "login.html";
 }
 
 import { allBlogPostfetch } from "../api_calls/api_fetch.js";

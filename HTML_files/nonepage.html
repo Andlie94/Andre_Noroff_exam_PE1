@@ -12,48 +12,33 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../CSS_files/style.css" />
-    <script src="../js_files/Direct/edit.js" type="module" defer></script>
     <script src="../js_files/Direct/addloginlogoutbutton.js" type="module" defer></script>
   </head>
-  <body class="editpage">
+  <body class="landingPage">
     <header>
-      <div class="header_contianer">
-        <input type="checkbox" id="menu-chekbox">
-        <label for="menu-chekbox" class="hamburger_menu"><i class="fa-solid fa-bars"></i></label>
-        <a href="../"><img src="../images/Stifinneren_logo_white.png" class="logo_stfinneren" alt="logo of Stifinneren"></a>
-          <nav>
-            <a href="../">HOME</a>
-            <a href="contact.html">CONTACT</a>
-            <a href="edit.html" id="editShow" class="edit-header">EDIT</a>
-            <div id="loginlogout-container" class="loginlogout"></div>
-          </nav> 
-        </div>
-    </header>
+        <div class="header_contianer">
+          <input type="checkbox" id="menu-chekbox">
+          <label for="menu-chekbox" class="hamburger_menu"><i class="fa-solid fa-bars"></i></label>
+          <a href="../"><img src="../images/Stifinneren_logo_white.png" class="logo_stfinneren" alt="logo of Stifinneren"></a>
+            <nav>
+              <a href="../">HOME</a>
+              <a href="contact.html">CONTACT</a>
+              <a href="edit.html" id="editShow" class="edit-header">EDIT</a>
+              <div id="loginlogout-container" class="loginlogout"></div>
+            </nav> 
+          </div>
+      </header>
     <main>
-        <section>
-        <div class="newPost">
-          <h1>WRITE A NEW POST</h1>
-          <form action="newPostform" method="POST" class="newpost-form" id="newPostForm">
-              <label for="title"></label>
-              <input class="title" type="text" id="titleBlogg" name="title" placeholder="Enter title here" required>
-      
-              <label for="content"></label>
-              <textarea id="bloggContent" name="content" placeholder="Write blog post here" required></textarea>
-      
-              <label for="url"></label>
-              <div class="url-and-button">
-                  <input type="text" id="url_picture" name="URL" placeholder="Add url picture her">
-                  <button type="submit">POST</button>
-              </div>
-          </form>
-        </div>
-       </section>
-       <section>
-        <div>
-            <div id="blogginnlegg" class="edit-page">
+        <div class="development-container">
+            <div class="stifinneren-landingpage">
+              <img src="/images/Stifinneren-maskott-head.png" alt="Stifinneren maskot head">
             </div>
-        </div>
-       </section>
+            <div class="development-text">
+                <h1> IN DEVELOPMENT</h1>
+                <p>This section is currently under development. Please check back later for more updates.</p>
+            </div>
+           </div>
+    </main>
     <footer>
         <div class="footer_container">
             <div class="footer_box">
@@ -103,5 +88,5 @@
           </div>
           <div class="footer_copyright">© 2022 STIFINNEREN</div>
     </footer>
-  </body>
+</body>
 </html>

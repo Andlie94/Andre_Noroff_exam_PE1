@@ -37,7 +37,7 @@ header {
     color: #ffffff;
     padding: 10px 20px;
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 22px;
     font-weight: 400;
     margin-top: 2px;
   }
@@ -49,7 +49,11 @@ header {
     left: 1px;
   }
   nav :hover {
-    color: #135b34;
+    color: #f6e8ce;
+  }
+  .edit-header{
+    margin-left: 145%;
+    transform: translateY(-84%);
   }
 .commonButton {
   background-color: #87d5b9;
@@ -75,10 +79,9 @@ header {
   padding: 10px;
   color: #fdfdfd;
   font-weight: 400;
-  font-size: 2vw;
+  font-size: 24px;
   font-family: "Inter", sans-serif;
 }
-
 .hero_image img {
   top: 0;
   left: 0;
@@ -642,7 +645,7 @@ footer {
   color: #1f4545;
 }
 .editPost textarea {
-  height: 100px; /* Juster høyden etter behov */
+  height: 100px;
 }
 .editPost input[type="text"]::placeholder,
 .editPost textarea::placeholder {
@@ -739,7 +742,7 @@ footer {
     display: none;
   }
   .loginform {
-    margin-bottom: -20%;
+    margin: 0 auto;
   }
   .newPost h1 {
     font-size: 8vw;
@@ -783,8 +786,6 @@ footer {
     display: none;
   }
 }
-
-
 @media (max-width: 668px){
     .otherBlogg{
   display: none;
@@ -802,8 +803,9 @@ footer {
     position: absolute;
     top: 25px;
     left: 10px;
-    z-index: 10;
+    z-index: 999;
     font-size: 30px;
+    cursor: pointer;
   }
   nav a{
     font-size: 4vw;
@@ -814,8 +816,8 @@ footer {
     height: 300px;
     padding-top: 60px;
     left: 0px;
-    top: 70px;
-    background-color: #C5F1E4;
+    top: 00px;
+    background-color: #00574b6a;
     box-shadow: 0 100px 200px rgba(0, 0, 0, 0.789);
     text-align: center;
     line-height: 1.5;
@@ -823,18 +825,16 @@ footer {
     margin-left: 0%;
   }
   .logg_button {
-    padding: 2px;
     position:sticky;
     margin-top: 0px;
     margin-left: 0%;
-    background-color: transparent;
-    color: #ffffff;
     border: none;
     padding: 10px;
-    color: #fdfdfd;
-    font-weight: 400;
     font-size: 4vw;
-    font-family: "Inter", sans-serif;
+  }
+  .edit-header{
+    margin-left: 0%;
+    transform: translateY(0%);
   }
 }
 @media (min-width: 668px) {
@@ -849,7 +849,6 @@ footer {
     nav a {
       display: inline;
     }
-
 } 
   @media (max-width: 850px){
     .otherBlogg{
@@ -938,13 +937,59 @@ footer {
   }
   
   .mySlides h3 {
-    position: absolute; /* Position the title over the image */
-    bottom: 20px; /* Add space from the bottom of the image */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center title exactly */
-    color: white; /* Title color */
-    font-weight: bold; /* Make title bold */
-    padding: 10px 20px; /* Add padding for better spacing around text */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-    border-radius: 5px; /* Optional rounded corners */
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: white; 
+    font-weight: bold; 
+    padding: 10px 20px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 5px; 
+  }
+
+  .development-container{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+    margin-bottom: -5%;
+  }
+  .development-text {
+    padding: 2%;
+    height: 23vw;
+    font-size: 2vw;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #FBE4B9;
+    border-radius: 10px;
+    color: #00574C;
+    margin: 15%;
+    font-weight: 900;
+    position: relative;
+    }
+  .development-text::after {
+    content: ""; /* Ingen tekst, kun en trekant */
+    position: absolute;
+    top: 80%; /* Plassering midt vertikalt */
+    left: -20px; /* Plassering til venstre for boksen */
+    transform: translateY(-50%); /* Justerer trekanten slik at den er midtstilt vertikalt */
+    border-width: 10px; /* Størrelse på trekanten */
+    border-style: solid;
+    border-color: transparent #FBE4B9 transparent transparent; /* Trekanten peker mot venstre */
+  }
+  .stifinneren-landingpage{
+    display: flex;
+    align-items: center; 
+    height: 100vh; 
+    top: 50%;
+    margin-left: 10%;
+    margin-right: -10%;
+  }
+  .stifinneren-landingpage img{
+    width: 100%;
+  }
+  .landingPage{
+    background: linear-gradient(to bottom, #a1ebd5, #c5f1e4); 
   }

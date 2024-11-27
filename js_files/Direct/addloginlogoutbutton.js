@@ -6,7 +6,7 @@ function logout() {
 }
 
 function showAndHideEditPage() {
-  const edit = document.getElementById("editPage");
+  const edit = document.getElementById("editShow");
 
   if (localStorage.getItem("token") !== null) {
     edit.style.display = "block";
