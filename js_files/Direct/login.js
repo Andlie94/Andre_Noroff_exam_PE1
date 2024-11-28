@@ -24,7 +24,6 @@ async function handelLogin(event) {
         localStorage.setItem("token", token);
         localStorage.setItem("userEmail", userEmail);
         window.location.href = "edit.html";
-        console.log(data);
     } catch (error) {
         console.error("Wrong password or email", error);
     }
@@ -34,7 +33,6 @@ function logout() {
 
     localStorage.removeItem("token");
     localStorage.removeItem("userEmail");
-    console.log(localStorage.getItem("token"));
     updateUI(); 
 
 }

@@ -1,5 +1,3 @@
-const token = localStorage.getItem("token");
-
 import {
   allBlogPostfetch,
   filterbloggpostFetch,
@@ -7,6 +5,9 @@ import {
 
 async function displayOstlandetBlogPosts() {
   try {
+    displayAndHideLoadingScreen(true)
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
     const posts = await allBlogPostfetch();
 
     const ostlandetContainer = document.getElementById("Ostlandet-container");
@@ -31,6 +32,7 @@ async function displayOstlandetBlogPosts() {
 
       ostlandetContainer.appendChild(postElement);
     });
+    displayAndHideLoadingScreen(false)
   } catch (error) {
     console.error(
       "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
@@ -38,15 +40,22 @@ async function displayOstlandetBlogPosts() {
     );
   }
 }
-
-async function displayBlogPosts() {
+  async function displayBlogPosts() {
   try {
     const posts = await allBlogPostfetch();
+    displayAndHideLoadingScreen(true);
+
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    if (!posts.data || !Array.isArray(posts.data) || posts.data.length === 0) {
+      throw new Error("Ingen innlegg funnet.");
+    }
 
     const blogContainer = document.getElementById("data-container");
     blogContainer.innerHTML = "";
 
     const postsToDisplay = posts.data.slice(0, 12);
+
     postsToDisplay.forEach((post) => {
       const postElement = document.createElement("div");
       postElement.classList.add("post");
@@ -66,7 +75,9 @@ async function displayBlogPosts() {
     });
   } catch (error) {
     console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
-  }
+  }finally{
+      displayAndHideLoadingScreen(false);
+    }
 }
 
 async function displayByFilters(selectregion) {
@@ -125,3 +136,12 @@ stifinnerenHead.addEventListener("click", function() {
 
 displayOstlandetBlogPosts();
 displayBlogPosts();
+
+function displayAndHideLoadingScreen(isLoading) {
+  const loadingScreen = document.getElementById("loading-message");
+  if (isLoading) {
+    loadingScreen.style.display = "block"; 
+  } else {
+    loadingScreen.style.display = "none";  
+  }
+}

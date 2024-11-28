@@ -30,12 +30,6 @@ async function displayCarucel() {
           <a class="next" onclick="plusSlides(1)">❯</a>
         </div>
         <br />
-        
-        <div style="text-align: center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
       `;
 
       const slides = document.querySelectorAll(".mySlides");

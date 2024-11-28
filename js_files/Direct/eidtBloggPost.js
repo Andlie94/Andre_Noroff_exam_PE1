@@ -4,9 +4,6 @@ const email = localStorage.getItem("userEmail");
 if (!token) {
   window.location.href = "login.html";
 }
-if (email !== "andlie02174@stud.noroff.no") {
-  window.location.href = "HTML_files/index.html";
-}
 
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("id");

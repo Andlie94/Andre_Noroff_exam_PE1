@@ -43,8 +43,6 @@ async function registerUser(event) {
       if (!response.ok) {
         throw new Error('Failed to register user');
       }
-      console.log(response);
-  
       const data = await response.json();
       alert('Registration successful! You can now log in.');
       location.reload();

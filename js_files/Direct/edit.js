@@ -1,10 +1,6 @@
 const token = localStorage.getItem("token");
-const email = localStorage.getItem("userEmail");
 
 if (!token) {
-  window.location.href = "login.html";
-}
-if (email !== "andlie02174@stud.noroff.no") {
   window.location.href = "login.html";
 }
 
@@ -13,6 +9,7 @@ import { allBlogPostfetch } from "../api_calls/api_fetch.js";
 async function displayBlogPosts() {
   try {
     const posts = await allBlogPostfetch();
+    displayAndHideLoadingScreen(true);
 
     posts.data.forEach((edit) => {
       const postElement = document.createElement("div");
@@ -48,6 +45,7 @@ async function displayBlogPosts() {
       });
       blogginnlegg.appendChild(postElement);
     });
+    displayAndHideLoadingScreen(false);
   } catch (error) {
     console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
   }
@@ -68,8 +66,6 @@ async function deleteBlogPost(id) {
     if (!response.ok) {
       throw new Error("Failed to delete blog post");
     }
-
-    console.log("Blog post deleted successfully");
 
     window.location.reload();
   } catch (error) {
@@ -117,6 +113,15 @@ async function createBlogPost(postContent) {
   } catch (error) {
     console.error("Failed to create blog post:", error);
     alert("An error occurred while creating the blog post: " + error.message);
+  }
+}
+
+function displayAndHideLoadingScreen(isLoading) {
+  const loadingScreen = document.getElementById("loading-message");
+  if (isLoading) {
+    loadingScreen.style.display = "block"; 
+  } else {
+    loadingScreen.style.display = "none";  
   }
 }
 

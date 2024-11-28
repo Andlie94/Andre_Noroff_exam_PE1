@@ -4,6 +4,10 @@ body {
   margin: 0;
   background-color: #00574c;
 }
+#loading-message {
+    color: #ffff;
+    font-size: 3rem;
+}
 a {
   text-decoration: none;
   color: #ffffff;
@@ -981,3 +985,12 @@ footer {
   .landingPage{
     background: linear-gradient(to bottom, #a1ebd5, #c5f1e4); 
   }
+ .filter-container{
+    margin-left: 50px;
+ }
+ .filterByPlace{
+    font-size: 1rem;
+    background-color: #fbe4b9;
+    color: #00574C;
+    font-weight: 900;
+ }
