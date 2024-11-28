@@ -22,7 +22,7 @@ header {
     top: 0;
     left: 0;
     z-index: 100;
-    background: linear-gradient(to bottom, #147b6d55, #c5f1e411);;
+    background: #00574b55
   }
   nav {
         position: fixed;              
@@ -195,6 +195,8 @@ footer {
   gap: 50px;
   padding: 20px;
   justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%
 }
 .data-container1 {
   background-color: #037e6e;
@@ -329,7 +331,6 @@ footer {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
-  margin-bottom: 5%;
   margin-top: 100px;
 }
 .artikel img {
@@ -340,7 +341,6 @@ footer {
   overflow: hidden;
 }
 .artikel h1 {
-  color: #ffffff;
   margin-bottom: 10px;
 }
 .artikel span {
@@ -353,7 +353,7 @@ footer {
   float: left;
 }
 .artikel p {
-  font-size: 1.2vw;
+  font-size: 1.5rem;
   text-align: left;
   margin-top: 5%;
 }
@@ -678,6 +678,7 @@ footer {
 @media (max-width: 1000px) {
   .data-container {
     grid-template-columns: repeat(2, 1fr);
+    margin: 0%;
   }
   .post p {
     font-size: 1.6vw;
@@ -764,23 +765,11 @@ footer {
     margin-bottom: 20%;
   }
   .artikel p{
-    font-size: 4vw;
+    font-size: 3.5vw;
     margin-top: 10%;
   }
   .artikel img{
-    width: 100%;
     height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .artikel span{
-    font-size: 4vw;
-
-  }
-  .artikel time{
-    font-size: 4vw;
- 
   }
   .otherBlogg{
     display: none;
@@ -817,7 +806,7 @@ footer {
     padding-top: 60px;
     left: 0px;
     top: 00px;
-    background-color: #00574b6a;
+    background-color: #090f0e6a;
     box-shadow: 0 100px 200px rgba(0, 0, 0, 0.789);
     text-align: center;
     line-height: 1.5;
@@ -935,7 +924,6 @@ footer {
     border-radius: 0px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
-  
   .mySlides h3 {
     position: absolute; 
     bottom: 20px; 
@@ -970,14 +958,14 @@ footer {
     position: relative;
     }
   .development-text::after {
-    content: ""; /* Ingen tekst, kun en trekant */
+    content: ""; 
     position: absolute;
-    top: 80%; /* Plassering midt vertikalt */
-    left: -20px; /* Plassering til venstre for boksen */
-    transform: translateY(-50%); /* Justerer trekanten slik at den er midtstilt vertikalt */
-    border-width: 10px; /* Størrelse på trekanten */
+    top: 80%; 
+    left: -20px; 
+    transform: translateY(-50%); 
+    border-width: 10px; 
     border-style: solid;
-    border-color: transparent #FBE4B9 transparent transparent; /* Trekanten peker mot venstre */
+    border-color: transparent #FBE4B9 transparent transparent; 
   }
   .stifinneren-landingpage{
     display: flex;
