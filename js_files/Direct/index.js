@@ -3,10 +3,19 @@ import {
   filterbloggpostFetch,
 } from "../api_calls/api_fetch.js";
 
+function displayAndHideLoadingScreen(isLoading) {
+  const loadingScreen = document.getElementById("loading-message");
+  if (isLoading) {
+    loadingScreen.style.display = "block";
+  } else {
+    loadingScreen.style.display = "none";
+  }
+}
+
 async function displayOstlandetBlogPosts() {
   try {
-    displayAndHideLoadingScreen(true)
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    displayAndHideLoadingScreen(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const posts = await allBlogPostfetch();
 
@@ -32,7 +41,7 @@ async function displayOstlandetBlogPosts() {
 
       ostlandetContainer.appendChild(postElement);
     });
-    displayAndHideLoadingScreen(false)
+    displayAndHideLoadingScreen(false);
   } catch (error) {
     console.error(
       "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
@@ -40,14 +49,18 @@ async function displayOstlandetBlogPosts() {
     );
   }
 }
-  async function displayBlogPosts() {
+async function displayBlogPosts() {
   try {
     const posts = await allBlogPostfetch();
     displayAndHideLoadingScreen(true);
 
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    if (!posts.data || !Array.isArray(posts.data) || posts.data.length === 0) {
+    if (!posts || !posts.data) {
+      throw new Error("Ingen innlegg funnet.");
+    }
+
+    if(!posts.data.length || posts.data.length === 0) {
       throw new Error("Ingen innlegg funnet.");
     }
 
@@ -73,41 +86,37 @@ async function displayOstlandetBlogPosts() {
 
       blogContainer.appendChild(postElement);
     });
+    displayAndHideLoadingScreen(false);
   } catch (error) {
     console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
-  }finally{
-      displayAndHideLoadingScreen(false);
-    }
+    alert("error:" + error.message);
+  }
 }
 
 async function displayByFilters(selectregion) {
   try {
-    const posts = await filterbloggpostFetch(selectregion);2
-const ostlandetContainer = document.getElementById("data-container");
-ostlandetContainer.innerHTML = "";
+    const posts = await filterbloggpostFetch(selectregion);
+    const ostlandetContainer = document.getElementById("data-container");
+    ostlandetContainer.innerHTML = "";
     posts.data.forEach((post) => {
-        const postElement = document.createElement("div");
-        postElement.classList.add("post");
+      const postElement = document.createElement("div");
+      postElement.classList.add("post");
 
-        postElement.innerHTML = `
+      postElement.innerHTML = `
           <img src="${post.media.url}" alt="${post.media.alt}">
           <h3>${post.title}</h3>
           <p>${post.body.split(".")[0]}</p>  <!-- Kun første setning -->
           <p><small>Author: ${post.author.name}</small></p>
         `;
-  
+      postElement.addEventListener("click", () => {
+        window.location.href = `blogpost.html?id=${post.id}`;
+      });
 
-        postElement.addEventListener("click", () => {
-          window.location.href = `blogpost.html?id=${post.id}`;  
-        });
-
-        ostlandetContainer.appendChild(postElement);
+      ostlandetContainer.appendChild(postElement);
     });
   } catch (error) {
-    console.error(
-      "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
-      error
-    );
+    console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
+    alert("error:" + error.message);
   }
 }
 
@@ -126,22 +135,16 @@ if (filter) {
 const stifinnerenHead = document.getElementById("fjellregel_image");
 const stifinnerentext = document.getElementById("fjellregel_regel");
 
-stifinnerenHead.addEventListener("click", function() {
-    if (stifinnerentext.style.display === "none" || stifinnerentext.style.display === "") {
-        stifinnerentext.style.display = "block";
-    } else {
-        stifinnerentext.style.display = "none";
-    }
+stifinnerenHead.addEventListener("click", function () {
+  if (
+    stifinnerentext.style.display === "none" ||
+    stifinnerentext.style.display === ""
+  ) {
+    stifinnerentext.style.display = "block";
+  } else {
+    stifinnerentext.style.display = "none";
+  }
 });
 
 displayOstlandetBlogPosts();
 displayBlogPosts();
-
-function displayAndHideLoadingScreen(isLoading) {
-  const loadingScreen = document.getElementById("loading-message");
-  if (isLoading) {
-    loadingScreen.style.display = "block"; 
-  } else {
-    loadingScreen.style.display = "none";  
-  }
-}

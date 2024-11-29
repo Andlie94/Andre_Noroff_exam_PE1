@@ -323,9 +323,6 @@ footer {
   border-bottom: 10px solid transparent;
   border-left: 10px solid #fbe4b9;
 }
-.fjellregel-phone {
-  display: none;
-}
 .blogginnlegg {
   margin-top: 50px;
   margin: 5%;
@@ -705,19 +702,42 @@ footer {
   .hero_image {
     height: 500px;
   }
-  .fjellregel {
-    display: none;
-  }
-  .fjellregel-phone {
-    display: block;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .fjellregel-phone h2 {
-    font-size: 17vw;
-    margin-bottom: -10%;
-  }
+
+
+.fjellregel {
+    flex-direction: column; 
+    align-items: stretch; 
+    text-align: center; 
+}
+.fjellregel_text {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: left; 
+}
+
+.fjellregel_image {
+    order: 1;
+}
+.fjellregel_text h2 {
+    order: 3;
+    font-size: 3.5rem;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.fjellregel_regel {
+    order: 2;
+}
+
+.fjellregel_regel p {
+    font-size: 1rem; 
+    margin:10%;
+}
+
+.fjellregel_image img {
+    margin-bottom: 0%;
+    width: 150px;
+}
   .data-container1 h2 {
     font-size: 12vw;
   }

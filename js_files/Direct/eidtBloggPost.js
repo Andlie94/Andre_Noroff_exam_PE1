@@ -44,6 +44,12 @@ document
     const mediaUrl = document.getElementById("urlPictureUrlEdit").value;
     const mediaAlt = document.getElementById("urlPictureAltEdit").value;
 
+    if (!title || !body || !mediaUrl || !mediaAlt) {
+      alert("Please fill in all fields");
+      return;
+    }
+    
+
     const updatedContent = {
       title: title,
       body: body,

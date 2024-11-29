@@ -54,6 +54,7 @@ async function displayBlogPost() {
     blogContainer.appendChild(postElement);
   } catch (error) {
     console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
+    alert("error:" + error.message);
     const blogContainer = document.getElementById("blogginlegg");
     blogContainer.innerHTML = "Noe gikk galt, prøv på nytt senere.";
   }
@@ -90,9 +91,7 @@ async function displayOstlandetBlogPosts() {
       error
     );
   }
-}
-
-function displayAndHideLoadingScreen(isLoading) {
+}function displayAndHideLoadingScreen(isLoading) {
   const loadingScreen = document.getElementById("loading-message");
   if (isLoading) {
     loadingScreen.style.display = "block"; 

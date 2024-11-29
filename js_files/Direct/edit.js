@@ -34,7 +34,6 @@ async function displayBlogPosts() {
           const id = button.getAttribute("data-id");
 
           await deleteBlogPost(id);
-          displayBlogPosts();
         });
         document.querySelectorAll(".edit-buttton").forEach((button) => {
           button.addEventListener("click", async () => {
@@ -48,6 +47,7 @@ async function displayBlogPosts() {
     displayAndHideLoadingScreen(false);
   } catch (error) {
     console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
+    alert("error:" + error.message);
   }
 }
 async function deleteBlogPost(id) {
@@ -62,17 +62,14 @@ async function deleteBlogPost(id) {
         },
       }
     );
-
     if (!response.ok) {
       throw new Error("Failed to delete blog post");
     }
-
     window.location.reload();
   } catch (error) {
     console.error("Failed to delete blog post:", error);
   }
 }
-
 document
   .getElementById("newPostForm")
   .addEventListener("submit", async (event) => {
@@ -81,12 +78,37 @@ document
     const title = document.getElementById("titleBlogg").value;
     const body = document.getElementById("bloggContent").value;
     const media = document.getElementById("url_picture").value;
+    const medAlt = document.getElementById("url_alt").value;
+
+    if (title === '') {
+      alert('Please fill in the title.');
+      return;
+    } else if (body === '') {
+      alert('Please fill in the body content.');
+      return;
+    } else if (media === '') {
+      alert('Please add a picture.');
+      return;
+    } else if (medAlt === '') {
+      alert('Please add alternative text.');
+      return;
+    }
+
+    if (title.length < 5){
+      alert('The title must be at least 5 characters long.');
+      return;
+    }
+    if (body.length < 10){
+      alert('The body content must be at least 10 characters long.');
+      return;
+    }
 
     const postContent = {
       title: title,
       body: body,
       media: {
         url: media,
+        alt: medAlt,
       },
     };
     await createBlogPost(postContent);
@@ -108,7 +130,6 @@ async function createBlogPost(postContent) {
     if (!response.ok) {
       throw new Error("Failed to create blog post");
     }
-
     window.location.reload();
   } catch (error) {
     console.error("Failed to create blog post:", error);
@@ -124,5 +145,4 @@ function displayAndHideLoadingScreen(isLoading) {
     loadingScreen.style.display = "none";  
   }
 }
-
 displayBlogPosts();
