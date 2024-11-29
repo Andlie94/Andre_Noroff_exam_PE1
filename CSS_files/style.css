@@ -6,7 +6,7 @@ body {
 }
 #loading-message {
     color: #ffff;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 a {
   text-decoration: none;
@@ -24,7 +24,6 @@ header {
     position: fixed;
     height: 77px;
     top: 0;
-    left: 0;
     z-index: 100;
     background: #00574b55
   }
@@ -50,7 +49,6 @@ header {
     height: auto;
     padding-left: 2%;
     top: 10px;
-    left: 1px;
   }
   nav :hover {
     color: #f6e8ce;
@@ -81,10 +79,8 @@ header {
   color: #ffffff;
   border: none;
   padding: 10px;
-  color: #fdfdfd;
   font-weight: 400;
   font-size: 24px;
-  font-family: "Inter", sans-serif;
 }
 .hero_image img {
   top: 0;
@@ -99,7 +95,7 @@ header {
   font-weight: 600;
   position: absolute;
   border-radius: 30px;
-  top: 50%;
+  top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
   border: solid 5px #ffffff;
@@ -118,6 +114,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   color: #ffffff;
+  text-decoration: none;
 }
 .footer_box h3 {
   text-decoration: underline;
@@ -136,35 +133,24 @@ footer {
   font-weight: 600;
   border: #ffffff 2px solid;
   margin-top: 2%;
+  background-color: #87d5b9;
 }
 .footer_left button:hover {
   color: #87d5b9;
   background-color: #ffffff;
   border: #87d5b9 2px solid;
 }
-.footer_left input {
-  font-size: 1rem;
-  border-radius: 8px;
-  width: 60%;
-  color: #00574c;
-}
-.footer_left input::placeholder {
-  color: #00574c;
-  opacity: 60%;
-}
-
-.footer_middel_left {
+.footer_left input, .footer_left input::placeholder {
+    font-size: 1rem;
+    border-radius: 8px;
+    width: 60%;
+    color: #00574c;
+  }
+.footer_middel_left, .footer_middel_right, .footer_right {
   flex-basis: 25%;
-  text-decoration: none;
 }
 .footer_middel_left p {
   margin: 0;
-}
-.footer_middel_right {
-  flex-basis: 25%;
-}
-.footer_right {
-  flex-basis: 25%;
 }
 .footer_icon {
   display: flex;
@@ -174,13 +160,12 @@ footer {
   justify-content: center;
 }
 .footer_icon i {
-  margin: 0 1rem;
+  margin: 1rem;
 }
 .footer_copyright {
   text-align: center;
   margin-top: 2%;
   color: #ffffff;
-  font-size: 1rem;
 }
 .footer_phone {
   display: none;
@@ -189,7 +174,6 @@ footer {
   color: #fbe4b9;
   font-size: 8vw;
   margin-top: -5%;
-  margin-bottom: 20px;
   font-family: Tangerine;
   text-align: center;
 }
@@ -204,26 +188,18 @@ footer {
 }
 .data-container1 {
   background-color: #037e6e;
-  margin: 0;
 }
 .data-container1 h2 {
-  color: #ffffff;
   font-size: 6rem;
-  margin-bottom: 20px;
   text-align: center;
   font-family: Tangerine;
   color: #fbe4b9;
 }
-/* Styling for blog posts index*/
-.post p {
-  font-size: 1rem;
-}
-.post {
+.post{
   border-radius: 8px;
   padding: 10px;
   background-color: #fbe4b9;
   max-width: calc(33.33% - 50px);
-
   max-width: 300px;
   margin: 0 auto;
   color: #00574c;
@@ -242,38 +218,16 @@ footer {
   background-color: #00574c;
   color: #fbe4b9;
 }
-/* Styling for blog posts index */
-/*styling for blog posts edit*/
-.data {
-  border-radius: 8px;
-  padding: 10px;
-  background-color: #fbe4b9;
-  max-width: 100%;
-  felx: 1;
-  max-width: 300px;
-  margin: 0 auto;
-  color: #00574c;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-}
-.data img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  overflow: hidden;
-}
-/*styling for blog posts edit*/
 .Ostlandet {
   background-color: #037e6e;
 }
 .Ostlandet h2 {
   color: #fbe4b9;
   font-size: 8vw;
-  margin-bottom: 20px;
   text-align: center;
   font-family: Tangerine;
   text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
-  padding-top: 10px;
+  padding-top: 50px;
 }
 .fjellregel {
   display: flex;
@@ -324,7 +278,6 @@ footer {
   border-left: 10px solid #fbe4b9;
 }
 .blogginnlegg {
-  margin-top: 50px;
   margin: 5%;
   color: #ffffff;
   text-align: center;
@@ -367,10 +320,9 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 2fr));
   justify-content: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 5%;
 }
-.loginbody {
+.loginbody, .editpage, .edit-post, .landingPage {
   background: linear-gradient(to bottom, #a1ebd5, #c5f1e4); 
   overflow-x: hidden;
 }
@@ -393,7 +345,7 @@ footer {
   color: #ffffff;
   text-align: center;
 }
-.loginform {
+.loginform, .register_form {
   margin-top: 5%;
   max-width: 100%;
   height: 100%;
@@ -403,6 +355,11 @@ footer {
   border-radius: 8px;
   background-color: #00574c49;
 }
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 .login-form {
   display: flex;
   flex-direction: column;
@@ -447,32 +404,13 @@ footer {
 .loginform a:hover {
   color: #ffffff;
 }
-
-.loginform input {
-  color: #923333;
-}
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.login-form input[type="text"], .login-form input[type="password"], .register-form input[type="text"], .register-form input[type="password"] {
   background-color: #ffffff37;
   color: #ffffff;
   border: none;
 }
-.login-form input[type="text"]::placeholder,
-.login-form input[type="password"]::placeholder {
-  color: #ffffff;
-}
-
-.register-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 5%;
-  max-width: 100%;
-  height: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 5%;
-  border-radius: 8px;
+.login-form input[type="text"]::placeholder, .login-form input[type="password"]::placeholder, .register-form input[type="text"]::placeholder,.register-form input[type="password"]::placeholder {
+    color: #ffffff;
 }
 .register-form input {
   padding: 10px;
@@ -480,20 +418,6 @@ footer {
   border-radius: 15px;
   margin-bottom: 10%;
 }
-.register-form input[type="text"],
-.register-form input[type="password"] {
-  background-color: #ffffff37;
-  color: #ffffff;
-  border: none;
-}
-.register-form input[type="text"]::placeholder,
-.register-form input[type="password"]::placeholder {
-  color: #ffffff;
-}
-.editpage {
-  background: linear-gradient(to bottom, #a1ebd5, #d6e9e3);
-}
-
 .newPost {
   background-color: #00574b3d;
   padding: 20px;
@@ -508,7 +432,6 @@ footer {
   font-weight: 900;
   margin-top: -15px;
 }
-
 .newpost-form input[type="text"],
 .newpost-form textarea {
   width: 98%;
@@ -520,17 +443,14 @@ footer {
   color: #037e6e;
   font-weight: 600;
 }
-
 .newpost-form textarea {
   height: 200px;
 }
-
 .url-and-button {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .url-and-button input[type="text"] {
   flex: 1;
   padding: 12px;
@@ -539,7 +459,6 @@ footer {
 .newpost-form textarea::placeholder {
   color: #037e6e37;
 }
-
 .newpost-form button {
   background-color: #87d5b9;
   border: 3px solid #ffffff;
@@ -551,12 +470,12 @@ footer {
   color: #ffff;
   font-weight: 900;
 }
-
-.newpost-form button:hover {
-  background-color: #b3e5e5;
-}
-
-.edit {
+.newpost-form  button:hover {
+    background-color: #ffffff;
+    color: #87d5b9;
+    border: solid #87d5b9;
+  }
+.edit, .editPost {
   border-radius: 8px;
   padding: 10px;
   background-color: #00574b37;
@@ -568,7 +487,6 @@ footer {
   margin-top: 4%;
   margin-bottom: 3%;
 }
-
 .edit-div img {
   width: 150px;
   height: 150px;
@@ -580,7 +498,6 @@ footer {
   flex-direction: row;
 }
 .edit-info-div {
-  display: flex;
   flex-direction: column;
   margin-left: 5%;
 }
@@ -589,16 +506,13 @@ footer {
   color: #ffffff;
   font-size: 2.5vw;
   font-weight: 900;
-  word-spacing: -3px;
   margin-top: 1%;
 }
 .edit-info-div p {
-  margin-top: 0;
   color: #ffffff;
   font-weight: 600;
 }
 .edit-info-div button {
-  margin-top: 0;
   background-color: transparent;
   color: #00574c;
   cursor: pointer;
@@ -606,34 +520,16 @@ footer {
   font-weight: 900;
   font-size: 1.6vw;
 }
-
 .edit-info-div button:hover {
-  background-color: transparent;
   color: #ffffff;
-  cursor: pointer;
-  font-weight: 900;
 }
 .editPost {
-  background-color: #c7e6e5;
   padding: 20px;
-  border-radius: 10px;
   max-width: 600px;
-  margin: auto;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 2px solid #82d1cf;
   margin-top: 5%;
   margin-bottom: 100px;
   margin-top: 200px;
 }
-
-.editPost label {
-  display: block;
-  font-size: 14px;
-  color: #1f4545;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
 .editPost input[type="text"],
 .editPost textarea {
   width: 96%;
@@ -642,15 +538,12 @@ footer {
   border: 1px solid #a2c7c6;
   border-radius: 5px;
   font-size: 16px;
-  background-color: #f1fdfd;
+  font-weight: 600;
+  background-color: #f1fdfda4;
   color: #1f4545;
 }
 .editPost textarea {
   height: 100px;
-}
-.editPost input[type="text"]::placeholder,
-.editPost textarea::placeholder {
-  color: #ffffff;
 }
 .url-alt-container {
   display: flex;
@@ -670,12 +563,10 @@ footer {
   font-weight: 600;
 }
 .url-alt-container button:hover {
-  background-color: #b3e5e5;
-}
-.edit-post {
-  background: linear-gradient(to bottom, #a1ebd5, #d6e9e3);
-}
-
+    background-color: #ffffff;
+    color: #87d5b9;
+    border: solid #87d5b9;
+  }
 @media (max-width: 1000px) {
   .data-container {
     grid-template-columns: repeat(2, 1fr);
@@ -685,7 +576,6 @@ footer {
     font-size: 1.6vw;
   }
 }
-
 @media (max-width: 600px) {
   .data-container {
     grid-template-columns: repeat(1, 1fr);
@@ -702,8 +592,6 @@ footer {
   .hero_image {
     height: 500px;
   }
-
-
 .fjellregel {
     flex-direction: column; 
     align-items: stretch; 
@@ -715,25 +603,20 @@ footer {
     align-items: center; 
     text-align: left; 
 }
-
 .fjellregel_image {
     order: 1;
 }
 .fjellregel_text h2 {
     order: 3;
     font-size: 3.5rem;
-    margin-top: 0%;
-    margin-bottom: 0%;
 }
 .fjellregel_regel {
     order: 2;
 }
-
 .fjellregel_regel p {
     font-size: 1rem; 
     margin:10%;
 }
-
 .fjellregel_image img {
     margin-bottom: 0%;
     width: 150px;
@@ -778,19 +661,16 @@ footer {
   }
   .edit-page p{
     font-size: 2.5vw;
-    margin-top: 10%;
   }
   .edit-page button{
     font-size: 3vw;
-    margin-top: 80%;
   }
   .blogginnlegg{
-    display: flex;
     margin-bottom: 20%;
   }
   .artikel p{
     font-size: 3.5vw;
-    margin-top: 10%;
+    margin-top: 20%;
   }
   .artikel img{
     height: 200px;
@@ -809,7 +689,6 @@ footer {
   .logo_stfinneren {
     margin-left: 40%;
     width: 80px;
-    height: auto;
   }
   .hamburger_menu {
     place-content: left;
@@ -863,21 +742,17 @@ footer {
       display: inline;
     }
 } 
-  @media (max-width: 850px){
+  @media (max-width: 1000px){
     .otherBlogg{
   display: none;
     }
   }
-
   .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
-
   }
-
-  .prev,
-  .next {
+  .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -885,37 +760,22 @@ footer {
     padding: 16px;
     margin-top: -22px;
     color: #00574C;
-    font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: #FBE4B9;
-  }
-
-.prev{
+    background-color: #fbe4b970;
     border-radius: 100%;
-}
+  }
   .next {
     right: 0;
-    border-radius: 100%;
   }
-
-  .prev:hover,
-  .next:hover {
-    background-color:#eed19bf6;
-    border-radius: 100%;
-  }
-
-  .active,
-  .dot:hover {
-    background-color: #620a0a;
+  .prev:hover, .next:hover {
+    background-color:#e9dbc1a6;
   }
   .fade {
     animation-name: fade;
     animation-duration: 1.5s;
   }
-
   @keyframes fade {
     from {
       opacity: 0.4;
@@ -924,15 +784,6 @@ footer {
       opacity: 1;
     }
   }
-
-  @media only screen and (max-width: 300px) {
-    .prev,
-    .next,
-    .text {
-      font-size: 11px;
-    }
-  }
-
   .mySlides{
     border-radius: 0px;
     padding: 0px; 
@@ -955,11 +806,10 @@ footer {
     transform: translateX(-50%); 
     color: white; 
     font-weight: bold; 
-    padding: 10px 20px; 
-    background-color: rgba(0, 0, 0, 0.5); 
-    border-radius: 5px; 
+    background-color: #00574bc2;
+    padding: 10px;
+    border-radius: 10px;
   }
-
   .development-container{
     display: flex;
     justify-content: center; 
@@ -970,41 +820,15 @@ footer {
   }
   .development-text {
     padding: 2%;
-    height: 23vw;
     font-size: 2vw;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20%;
     background-color: #FBE4B9;
     border-radius: 10px;
     color: #00574C;
-    margin: 15%;
     font-weight: 900;
     position: relative;
     }
-  .development-text::after {
-    content: ""; 
-    position: absolute;
-    top: 80%; 
-    left: -20px; 
-    transform: translateY(-50%); 
-    border-width: 10px; 
-    border-style: solid;
-    border-color: transparent #FBE4B9 transparent transparent; 
-  }
-  .stifinneren-landingpage{
-    display: flex;
-    align-items: center; 
-    height: 100vh; 
-    top: 50%;
-    margin-left: 10%;
-    margin-right: -10%;
-  }
-  .stifinneren-landingpage img{
-    width: 100%;
-  }
-  .landingPage{
-    background: linear-gradient(to bottom, #a1ebd5, #c5f1e4); 
-  }
  .filter-container{
     margin-left: 50px;
  }
