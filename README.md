@@ -1,4 +1,4 @@
-This is a project for the Exam at Noroff. 
+# This is a project for the Exam at Noroff. 
 I have createt a blogg for children that is interested in nature and outdoor activities
 
 in this file will you have some more understanding of the chooses I have taken. 
@@ -13,7 +13,6 @@ HTML
 CSS 
 JavaScript vanilla
 
-Feel free to cole the project if you want to test it og mod it. 
+Feel free to clone the project if you want to test it or mod it. 
 
-
-![Stifinneren](../images/stifinneren-maskott.png)
+![picture of a man hiking](https://images.unsplash.com/photo-1465311440653-ba9b1d9b0f5b?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
