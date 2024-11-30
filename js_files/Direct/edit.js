@@ -5,6 +5,7 @@ if (!token) {
 }
 
 import { allBlogPostfetch } from "../api_calls/api_fetch.js";
+import { displayAndHideLoadingScreen } from '../loading/loadingfunction.js';
 
 async function displayBlogPosts() {
   try {
@@ -137,12 +138,4 @@ async function createBlogPost(postContent) {
   }
 }
 
-function displayAndHideLoadingScreen(isLoading) {
-  const loadingScreen = document.getElementById("loading-message");
-  if (isLoading) {
-    loadingScreen.style.display = "block"; 
-  } else {
-    loadingScreen.style.display = "none";  
-  }
-}
 displayBlogPosts();

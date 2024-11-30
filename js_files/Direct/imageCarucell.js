@@ -49,23 +49,22 @@ async function displayCarucel() {
   }
 
 function showSlides(currentSlideIndex) {
-  let i;
+  let imagecarucel;
   const slides = document.getElementsByClassName('mySlides');
   const dots = document.getElementsByClassName('dot');
   
-
   if (currentSlideIndex > slides.length) {
     slideIndex = 1;
   }
   if (currentSlideIndex < 1) {
     slideIndex = slides.length;
   }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
+  for (imagecarucel = 0; imagecarucel < slides.length; imagecarucel++) {
+    slides[imagecarucel].style.display = 'none';
   }
 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
+  for (imagecarucel = 0; imagecarucel < dots.length; imagecarucel++) {
+    dots[imagecarucel].className = dots[imagecarucel].className.replace(' active', '');
   }
   slides[slideIndex - 1].style.display = 'block';
 }

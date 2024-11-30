@@ -1,4 +1,5 @@
 import { allBlogPostfetch } from "../api_calls/api_fetch.js";
+import { displayAndHideLoadingScreen } from '../loading/loadingfunction.js';
 
 async function displayBlogPost() {
   const queryString = window.location.search;
@@ -47,7 +48,7 @@ async function displayBlogPost() {
             <time><small>Publisert: ${
               artikel.data.updated.split("T")[0]
             }</small></time>
-            <span><small>Forfatter: ${artikel.data.author.name}</span></p>
+            <span><small>Forfatter: ${artikel.data.author.name}</span>
             <p>${artikel.data.body}</p>
         `;
 
@@ -90,13 +91,6 @@ async function displayOstlandetBlogPosts() {
       "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
       error
     );
-  }
-}function displayAndHideLoadingScreen(isLoading) {
-  const loadingScreen = document.getElementById("loading-message");
-  if (isLoading) {
-    loadingScreen.style.display = "block"; 
-  } else {
-    loadingScreen.style.display = "none";  
   }
 }
 

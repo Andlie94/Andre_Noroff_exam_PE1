@@ -3,14 +3,7 @@ import {
   filterbloggpostFetch,
 } from "../api_calls/api_fetch.js";
 
-function displayAndHideLoadingScreen(isLoading) {
-  const loadingScreen = document.getElementById("loading-message");
-  if (isLoading) {
-    loadingScreen.style.display = "block";
-  } else {
-    loadingScreen.style.display = "none";
-  }
-}
+import { displayAndHideLoadingScreen } from '../loading/loadingfunction.js';
 
 async function displayOstlandetBlogPosts() {
   try {
@@ -105,7 +98,7 @@ async function displayByFilters(selectregion) {
       postElement.innerHTML = `
           <img src="${post.media.url}" alt="${post.media.alt}">
           <h3>${post.title}</h3>
-          <p>${post.body.split(".")[0]}</p>  <!-- Kun første setning -->
+          <p>${post.body.split(".")[0]}</p> 
           <p><small>Author: ${post.author.name}</small></p>
         `;
       postElement.addEventListener("click", () => {
