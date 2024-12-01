@@ -42,7 +42,7 @@ async function displayCarucel() {
       showSlides(slideIndex);
     } catch (error) {
       console.error(
-        "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
+        "coud not get the slides for the carucel:",
         error
       );
     }

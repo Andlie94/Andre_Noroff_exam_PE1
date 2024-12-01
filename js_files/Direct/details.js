@@ -7,7 +7,7 @@ async function displayBlogPost() {
   const postId = urlParams.get("id");
 
   if (!postId) {
-    console.error("Post ID ikke funnet i URL.");
+    console.error("did not found Post ID.");
     return;
   }
 
@@ -26,13 +26,13 @@ async function displayBlogPost() {
     );
 
     if (!response.ok) {
-      throw new Error("Feil ved henting av innlegg");
+      throw new Error("Fsomthin went wrong with the fetch");
     }
 
     const artikel = await response.json();
 
     if (!artikel || !artikel.data) {
-      throw new Error("Innlegget ble ikke funnet.");
+      throw new Error("coud not get the artical.");
     }
 
     const blogContainer = document.getElementById("blogginnlegg");
@@ -57,7 +57,7 @@ async function displayBlogPost() {
     console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
     alert("error:" + error.message);
     const blogContainer = document.getElementById("blogginlegg");
-    blogContainer.innerHTML = "Noe gikk galt, prøv på nytt senere.";
+    blogContainer.innerHTML = "somthing went wrong, trt again later.";
   }
 }
 async function displayOstlandetBlogPosts() {
@@ -88,7 +88,7 @@ async function displayOstlandetBlogPosts() {
     displayAndHideLoadingScreen(false);
   } catch (error) {
     console.error(
-      "Det oppstod en feil ved henting av blogginnlegg for Ostlandet:",
+      "somthing went wrong with the fetch for Ostlandet: ",
       error
     );
   }

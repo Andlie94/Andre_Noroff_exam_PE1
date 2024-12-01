@@ -50,11 +50,11 @@ async function displayBlogPosts() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     if (!posts || !posts.data) {
-      throw new Error("Ingen innlegg funnet.");
+      throw new Error("did not find blog posts");
     }
 
     if(!posts.data.length || posts.data.length === 0) {
-      throw new Error("Ingen innlegg funnet.");
+      throw new Error("no blog posts found");
     }
 
     const blogContainer = document.getElementById("data-container");
@@ -81,7 +81,7 @@ async function displayBlogPosts() {
     });
     displayAndHideLoadingScreen(false);
   } catch (error) {
-    console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
+    console.error("An error occurred while fetching blog posts:", error);
     alert("error:" + error.message);
   }
 }
@@ -108,7 +108,7 @@ async function displayByFilters(selectregion) {
       ostlandetContainer.appendChild(postElement);
     });
   } catch (error) {
-    console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
+    console.error("An error occurred while fetching blog posts:", error);
     alert("error:" + error.message);
   }
 }

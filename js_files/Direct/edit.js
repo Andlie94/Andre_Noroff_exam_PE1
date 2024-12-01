@@ -47,7 +47,7 @@ async function displayBlogPosts() {
     });
     displayAndHideLoadingScreen(false);
   } catch (error) {
-    console.error("Det oppstod en feil ved henting av blogginnlegg:", error);
+    console.error("smothing went wrong with the arickel", error);
     alert("error:" + error.message);
   }
 }
