@@ -698,6 +698,7 @@ footer {
     z-index: 999;
     font-size: 30px;
     cursor: pointer;
+    color: #ffff;
   }
   nav a{
     font-size: 4vw;
