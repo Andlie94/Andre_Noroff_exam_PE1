@@ -24,7 +24,7 @@ For this project, we used three types of technologies.
 Here is how you can install it: go to your console in VSCode and follow the instructions.
 1. Clone the repo.
    
-`git clone git@github.com:NoroffFEU/portfolio-1-example.git`
+`git clone Andlie94/Andre_Noroff_exam_PE1`
 
 2. install
 
